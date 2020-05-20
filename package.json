@@ -1,0 +1,47 @@
+{
+  "name": "item",
+  "version": "0.0.1",
+  "description": "Item组件",
+  "main": "src/Item.tsx",
+  "scripts": {
+    "postversion": "git push --tags && git push && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wyd-4219/Item.git"
+  },
+  "author": {
+    "name": "王以栋",
+    "email": "wyd_4219@163.com"
+  },
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.1.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@sishuguojixuefu"
+    ],
+    "env": {
+      "react-native/react-native": true
+    }
+  },
+  "prettier": "@sishuguojixuefu/eslint-config/.prettierrc.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "**/*.{md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
